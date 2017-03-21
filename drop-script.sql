@@ -1,0 +1,12 @@
+drop table profession;
+drop table profession_kind;
+drop table comments;
+drop table company;
+drop table employee;
+drop table employer;
+drop table forum;
+drop table graduation;
+drop table last_job;
+drop table resume_table;
+drop table vacancy;
+drop table vacancy_list;
