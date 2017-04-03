@@ -68,15 +68,23 @@ CREATE TABLE resume_table(
 );
 
 CREATE TABLE vacancy_list(
-	EMPLOYER_ID int,
-	RESUME_ID int,
-	CONSTRAINT vacancy_list_pk Primary Key(EMPLOYER_ID, RESUME_ID) 
+	VACANCY_ID int FOREIGN KEY (VACANCY_ID) REFERENCES vacancy(ID),
+	RESUME_ID int FOREIGN KEY (RESUME_ID) REFERENCES resume_table(ID),
+	CONSTRAINT vacancy_list_pk UNIQUE (VACANCY_ID, RESUME_ID)
 );
 
 CREATE TABLE last_job(
-	EMPLOYEE_ID int, --составной ключ
+	EMPLOYEE_ID int, --пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 	PROFESSION_ID int,
 	START_WORKING_DATE Date NOT NULL,
 	FINISH_WORKING_DATE Date NOT NULL,
 	CONSTRAINT last_job_pk Primary Key(EMPLOYEE_ID, PROFESSION_ID) 
+);
+
+CREATE TABLE vacancy_register (
+  vacancy_id  INT,
+  description VARCHAR(255),
+  date        DATETIME,
+  old_salary  INT,
+  new_salary  INT
 );
