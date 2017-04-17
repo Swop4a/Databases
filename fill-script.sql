@@ -1,30 +1,122 @@
-INSERT dbo.graduation(NAME) VALUES('srednee');
-INSERT dbo.graduation(NAME) VALUES('visshee');
+BULK INSERT graduation
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\graduation.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
 
-INSERT dbo.profession_kind(TYPE) VALUES('PLOTTNIC');
-INSERT dbo.profession_kind(TYPE) VALUES('STROITEL');
-INSERT dbo.profession_kind(TYPE) VALUES('VRACH');
+SELECT * FROM graduation;
 
-INSERT profession(NAME, PROFESSION_DESCRIPTION, AVERAGE_SALARY, PROFESSION_KIND_ID) VALUES('PLOTNIC PO DRUGOME DEREVU', 'STROGAET DRUGOE DEREVO', 14000, 1);
-INSERT profession(NAME, PROFESSION_DESCRIPTION, AVERAGE_SALARY, PROFESSION_KIND_ID) VALUES('HIRURG', 'BIKER', 19000, 3);
+BULK INSERT profession_kind
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\profession_kind.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
 
-INSERT company (name) VALUES ('Apple');
-INSERT company (name) VALUES ('Sumsung');
-INSERT company (name) VALUES ('Xiaomi');
+SELECT * FROM profession_kind;
 
-INSERT INTO vacancy (DESCRIPTION, PROFESSION_ID, COMPANY_ID, SALARY, DATA_OPENING, DATA_CLOSING)
-  VALUES ('Some description #1', 1, 1, 30000, '12-10-25', '19-10-25');
-INSERT INTO vacancy (DESCRIPTION, PROFESSION_ID, COMPANY_ID, SALARY, DATA_OPENING, DATA_CLOSING)
-  VALUES ('Some description #2', 1, 2, 35000, '14-11-5', '15-3-25');
-INSERT INTO vacancy (DESCRIPTION, PROFESSION_ID, COMPANY_ID, SALARY, DATA_OPENING, DATA_CLOSING)
-  VALUES ('Some description #3', 2, 4, 35000, '14-11-5', '15-3-25');
+BULK INSERT profession
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\profession.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
 
-INSERT INTO employee VALUES ('Petya', 22, 89363348, 1, 1);
-INSERT INTO employee VALUES ('Vasya', 28, 89364568, 1, 2);
+SELECT * FROM profession;
 
-INSERT INTO resume_table VALUES (3, 58000, 'Some desc #1');
-INSERT INTO resume_table VALUES (3, 51000, 'Some desc #2');
-INSERT INTO resume_table VALUES (4, 30000, 'Some desc #3');
+BULK INSERT company
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\company.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
+
+SELECT * FROM company;
+
+BULK INSERT vacancy
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\vacancy.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
+
+SELECT * FROM vacancy;
+
+BULK INSERT employee
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\employee.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
+
+SELECT * FROM employee;
+
+BULK INSERT resume_table
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\resume.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
+
+SELECT * FROM resume_table;
+
+BULK INSERT forum
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\forum.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
+
+SELECT * FROM forum;
+
+BULK INSERT comments
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\comments.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
+
+SELECT * FROM comments;
+
+BULK INSERT employer
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\employer.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
+
+SELECT * FROM employer;
+
+BULK INSERT last_job
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\last_job.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
+
+SELECT * FROM last_job;
+
+BULK INSERT vacancy_list
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\vacancy_list.txt'
+WITH
+(
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+);
+
+SELECT * FROM vacancy_list;
 
 select * from graduation;
 select * from profession_kind;
@@ -32,5 +124,9 @@ select * from profession;
 select * from company;
 select * from vacancy;
 select * from employee;
-SELECT * from resume_table;
-
+select * from resume_table;
+SELECT * from forum;
+SELECT * FROM comments;
+SELECT * FROM employer;
+SELECT * FROM last_job;
+SELECT * FROM vacancy_list;
