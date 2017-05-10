@@ -15,7 +15,6 @@ SELECT
 	prof_kind.TYPE prof_kind_type
 FROM dbo.profession prof
 INNER JOIN dbo.profession_kind prof_kind ON prof.ID=prof_kind.ID;
-
 SELECT 
 	prof.ID id,
 	prof.NAME name,
@@ -148,12 +147,12 @@ SELECT nullif(pk.id, pk.PROFESSION_KIND_ID) as result from profession pk;
  set @Var1 = null
  set @Var2 = null
  set @Var3 = 'Var3'
- SELECT COALESCE(@Var1, @Var2, @Var3, 'Все параметры пустые') as c, 
+ SELECT COALESCE(@Var1, @Var2, @Var3, 'пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ') as c, 
  iif (@Var1 is not null, 'Var 1 is not null', 'Var1 is null') as Var1,
  iif (@Var2 is not null, 'Var 2 is not null', 'Var2 is null') as Var2,
  iif (@Var3 is not null, 'Var 3 is not null', 'Var3 is null') as Var3;
 
- SELECT CONCAT ('Число пи', '=', 3.14) as Result;
+ SELECT CONCAT ('пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ', '=', 3.14) as Result;
  SELECT CONCAT('One', 'Two', NULL) as Result;
 
  SELECT REPLACE('SSTU one <3', 'SSTU', 'SSU');

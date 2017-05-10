@@ -79,7 +79,7 @@ ROWTERMINATOR = '\n'
 SELECT * FROM forum;
 
 BULK INSERT comments
-FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\comments.txt'
+FROM 'C:\Database\files\comments.txt'
 WITH
 (
 FIELDTERMINATOR = ',',
