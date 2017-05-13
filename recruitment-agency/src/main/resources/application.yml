@@ -1,0 +1,12 @@
+server:
+  port: 8090
+spring:
+  mandatory-file-encoding: UTF-8
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost;integratedSecurity=true;
+  jpa:
+    database: sql_server
+    show-sql: true
+    hibernate:
+      ddl-auto: update

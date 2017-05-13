@@ -6,7 +6,66 @@
 
     <groupId>ssu.databases.agency</groupId>
     <artifactId>recruitment-agency</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1</version>
+    <packaging>war</packaging>
 
+    <name>recruitment-agency</name>
+    <description>
+        Web interface for database course by SSU.
+    </description>
 
+    <developers>
+        <developer>
+            <name>Pavkin Alexandr</name>
+            <email>alexandr300896@gmail.com</email>
+            <organization>SSU</organization>
+            <roles>
+                <role>dev</role>
+                <role>project manager</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.3.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!--Dependency to add additional tools for WS-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
