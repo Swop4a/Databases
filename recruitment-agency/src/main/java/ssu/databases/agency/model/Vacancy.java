@@ -6,11 +6,13 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
 @Table(name = "vacancy")
 public class Vacancy {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

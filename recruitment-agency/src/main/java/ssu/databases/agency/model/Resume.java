@@ -10,6 +10,7 @@ import java.util.List;
 public class Resume {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -57,5 +58,23 @@ public class Resume {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public List<Vacancy> getVacancyList() {
+        return vacancyList;
+    }
+
+    public void setVacancyList(List<Vacancy> vacancyList) {
+        this.vacancyList = vacancyList;
+    }
+
+    @Override
+    public String toString() {
+        return "Resume{" +
+                "id=" + id +
+                ", desireSalary=" + desireSalary +
+                ", description='" + description + '\'' +
+                ", employee=" + employee +
+                '}';
     }
 }

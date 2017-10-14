@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Profession {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

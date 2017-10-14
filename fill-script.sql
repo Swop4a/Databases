@@ -79,7 +79,7 @@ ROWTERMINATOR = '\n'
 SELECT * FROM forum;
 
 BULK INSERT comments
-FROM 'C:\Database\files\comments.txt'
+FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\comments.txt'
 WITH
 (
 FIELDTERMINATOR = ',',
@@ -108,7 +108,7 @@ ROWTERMINATOR = '\n'
 
 SELECT * FROM last_job;
 
-BULK INSERT vacancy_list
+BULK INSERT offers
 FROM 'C:\Users\Swop4a\IdeaProjects\databases\src\main\resources\files\vacancy_list.txt'
 WITH
 (
@@ -116,7 +116,7 @@ FIELDTERMINATOR = ',',
 ROWTERMINATOR = '\n'
 );
 
-SELECT * FROM vacancy_list;
+SELECT * FROM offers;
 
 select * from graduation;
 select * from profession_kind;

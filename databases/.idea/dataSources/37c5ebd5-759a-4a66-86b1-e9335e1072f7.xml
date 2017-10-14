@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="MSSQL" format-version="4.1">
+    <root id="1"/>
+    <database id="2" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+    </database>
+    <database id="4" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+    </database>
+    <database id="5" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+    </database>
+    <database id="6" parent="1" name="ReportServer">
+      <ObjectId>5</ObjectId>
+    </database>
+    <database id="7" parent="1" name="ReportServerTempDB">
+      <ObjectId>6</ObjectId>
+    </database>
+    <schema id="8" parent="2" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2017-04-16.19:11:22.110</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="9" parent="2" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="RSExecRole">
+      <ObjectId>7</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="NT SERVICE\ReportServer">
+      <ObjectId>8</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="18" parent="2" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="19" parent="2" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="20" parent="2" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="21" parent="2" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="22" parent="2" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <table id="23" parent="8" name="MSreplication_options">
+      <ObjectId>1787153412</ObjectId>
+      <CreatedTimestamp>2014-02-20.20:50:43.983</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-15.09:23:11.160</ModifiedTimestamp>
+    </table>
+    <table id="24" parent="8" name="comments">
+      <ObjectId>103671417</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.370</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.370</ModifiedTimestamp>
+    </table>
+    <table id="25" parent="8" name="company">
+      <ObjectId>71671303</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.370</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+    </table>
+    <table id="26" parent="8" name="employee">
+      <ObjectId>311672158</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.377</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+    </table>
+    <table id="27" parent="8" name="employer">
+      <ObjectId>231671873</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.373</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.373</ModifiedTimestamp>
+    </table>
+    <table id="28" parent="8" name="forum">
+      <ObjectId>2107154552</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.350</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.370</ModifiedTimestamp>
+    </table>
+    <table id="29" parent="8" name="graduation">
+      <ObjectId>279672044</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.377</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+    </table>
+    <table id="30" parent="8" name="last_job">
+      <ObjectId>487672785</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.383</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.383</ModifiedTimestamp>
+    </table>
+    <table id="31" parent="8" name="profession">
+      <ObjectId>23671132</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.363</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+    </table>
+    <table id="32" parent="8" name="profession_kind">
+      <ObjectId>2139154666</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.360</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.367</ModifiedTimestamp>
+    </table>
+    <table id="33" parent="8" name="resume_table">
+      <ObjectId>375672386</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.380</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.383</ModifiedTimestamp>
+    </table>
+    <table id="34" parent="8" name="spt_fallback_db">
+      <ObjectId>117575457</ObjectId>
+      <CreatedTimestamp>2003-04-08.09:18:01.557</CreatedTimestamp>
+      <ModifiedTimestamp>2014-02-20.20:51:04.127</ModifiedTimestamp>
+    </table>
+    <table id="35" parent="8" name="spt_fallback_dev">
+      <ObjectId>133575514</ObjectId>
+      <CreatedTimestamp>2003-04-08.09:18:02.870</CreatedTimestamp>
+      <ModifiedTimestamp>2014-02-20.20:51:04.137</ModifiedTimestamp>
+    </table>
+    <table id="36" parent="8" name="spt_fallback_usg">
+      <ObjectId>149575571</ObjectId>
+      <CreatedTimestamp>2003-04-08.09:18:04.180</CreatedTimestamp>
+      <ModifiedTimestamp>2014-02-20.20:51:04.143</ModifiedTimestamp>
+    </table>
+    <table id="37" parent="8" name="spt_monitor">
+      <ObjectId>1483152329</ObjectId>
+      <CreatedTimestamp>2014-02-20.20:49:38.300</CreatedTimestamp>
+      <ModifiedTimestamp>2014-02-20.20:51:04.157</ModifiedTimestamp>
+    </table>
+    <table id="38" parent="8" name="vacancy">
+      <ObjectId>167671645</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.370</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.383</ModifiedTimestamp>
+    </table>
+    <table id="39" parent="8" name="vacancy_list">
+      <ObjectId>423672557</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.380</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+    </table>
+    <table id="40" parent="8" name="vacancy_register">
+      <ObjectId>519672899</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.387</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.387</ModifiedTimestamp>
+    </table>
+    <view id="41" parent="8" name="spt_values">
+      <ObjectId>1467152272</ObjectId>
+      <CreatedTimestamp>2014-02-20.20:49:38.257</CreatedTimestamp>
+      <ModifiedTimestamp>2014-02-20.20:49:38.300</ModifiedTimestamp>
+    </view>
+    <routine id="42" parent="8" name="sp_MScleanupmergepublisher">
+      <ObjectId>1819153526</ObjectId>
+      <CreatedTimestamp>2014-02-20.20:50:44.080</CreatedTimestamp>
+      <ModifiedTimestamp>2014-02-20.20:51:04.180</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="43" parent="8" name="sp_MSrepl_startup">
+      <ObjectId>1803153469</ObjectId>
+      <CreatedTimestamp>2014-02-20.20:50:44.060</CreatedTimestamp>
+      <ModifiedTimestamp>2014-02-20.20:51:04.173</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <column id="44" parent="23" name="optname">
+      <Position>1</Position>
+      <DataType>sysname|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="23" name="value">
+      <Position>2</Position>
+      <DataType>bit|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="23" name="major_version">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="23" name="minor_version">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="23" name="revision">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="23" name="install_failures">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="24" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="24" name="COMPANY_ID">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="52" parent="24" name="FORUM_ID">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="53" parent="24" name="COMMENTS">
+      <Position>4</Position>
+      <DataType>nvarchar(40)|0</DataType>
+    </column>
+    <column id="54" parent="24" name="MARK">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="55" parent="24" name="comments_id">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="56" parent="24" name="comments_id">
+      <ObjectId>119671474</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.370</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.370</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>comments_id</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="57" parent="24" name="FK__comments__COMPAN__08162EEB">
+      <ObjectId>135671531</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.370</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.370</ModifiedTimestamp>
+      <ColNames>COMPANY_ID</ColNames>
+      <RefTableName>company</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="58" parent="24" name="FK__comments__FORUM___090A5324">
+      <ObjectId>151671588</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.370</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.370</ModifiedTimestamp>
+      <ColNames>FORUM_ID</ColNames>
+      <RefTableName>forum</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="59" parent="25" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="60" parent="25" name="NAME">
+      <Position>2</Position>
+      <DataType>nvarchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="61" parent="25" name="company_pk">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="62" parent="25" name="company_pk">
+      <ObjectId>87671360</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.370</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.370</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>company_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="63" parent="26" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="64" parent="26" name="NAME">
+      <Position>2</Position>
+      <DataType>nvarchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="26" name="AGE">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="26" name="PHONE_NUMBER">
+      <Position>4</Position>
+      <DataType>nvarchar(15)|0</DataType>
+    </column>
+    <column id="67" parent="26" name="PROFESSION_ID">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="68" parent="26" name="GRADUATION_ID">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="69" parent="26" name="employee_pk">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="70" parent="26" name="employee_pk">
+      <ObjectId>327672215</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.380</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>employee_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="71" parent="26" name="FK__employee__PROFES__147C05D0">
+      <ObjectId>343672272</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.380</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+      <ColNames>PROFESSION_ID</ColNames>
+      <RefTableName>profession</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="72" parent="26" name="FK__employee__GRADUA__15702A09">
+      <ObjectId>359672329</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.380</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+      <ColNames>GRADUATION_ID</ColNames>
+      <RefTableName>graduation</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="73" parent="27" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="74" parent="27" name="COMPANY_ID">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="75" parent="27" name="NAME">
+      <Position>3</Position>
+      <DataType>nvarchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="76" parent="27" name="employer_pk">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="77" parent="27" name="employer_pk">
+      <ObjectId>247671930</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.377</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.377</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>employer_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="78" parent="27" name="FK__employer__COMPAN__0FB750B3">
+      <ObjectId>263671987</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.377</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.377</ModifiedTimestamp>
+      <ColNames>COMPANY_ID</ColNames>
+      <RefTableName>company</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="79" parent="28" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="80" parent="28" name="NAME">
+      <Position>2</Position>
+      <DataType>nvarchar(40)|0</DataType>
+    </column>
+    <column id="81" parent="28" name="RATING">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="82" parent="28" name="forum_pk">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="83" parent="28" name="forum_pk">
+      <ObjectId>2123154609</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.360</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.360</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>forum_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="84" parent="29" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="85" parent="29" name="NAME">
+      <Position>2</Position>
+      <DataType>nvarchar(40)|0</DataType>
+    </column>
+    <index id="86" parent="29" name="graduation_pk">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="87" parent="29" name="graduation_pk">
+      <ObjectId>295672101</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.377</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.377</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>graduation_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="88" parent="30" name="EMPLOYEE_ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="30" name="PROFESSION_ID">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="30" name="START_WORKING_DATE">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="30" name="FINISH_WORKING_DATE">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="92" parent="30" name="last_job_pk">
+      <Position>1</Position>
+      <ColNames>EMPLOYEE_ID
+PROFESSION_ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="93" parent="30" name="last_job_pk">
+      <ObjectId>503672842</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.387</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.387</ModifiedTimestamp>
+      <ColNames>EMPLOYEE_ID
+PROFESSION_ID</ColNames>
+      <UnderlyingIndexName>last_job_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="94" parent="31" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="95" parent="31" name="NAME">
+      <Position>2</Position>
+      <DataType>nvarchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="96" parent="31" name="PROFESSION_DESCRIPTION">
+      <Position>3</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="97" parent="31" name="AVERAGE_SALARY">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="98" parent="31" name="PROFESSION_KIND_ID">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="99" parent="31" name="profession_pk">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="100" parent="31" name="profession_pk">
+      <ObjectId>39671189</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.367</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.367</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>profession_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="101" parent="31" name="FK__professio__PROFE__035179CE">
+      <ObjectId>55671246</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.367</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.367</ModifiedTimestamp>
+      <ColNames>PROFESSION_KIND_ID</ColNames>
+      <RefTableName>profession_kind</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="102" parent="32" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="103" parent="32" name="TYPE">
+      <Position>2</Position>
+      <DataType>nvarchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="104" parent="32" name="profession_kind_pk">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="105" parent="32" name="profession_kind_pk">
+      <ObjectId>7671075</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.363</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.363</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>profession_kind_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="106" parent="33" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="107" parent="33" name="EMPLOYEE_ID">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="108" parent="33" name="DESIRE_SALARY">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="33" name="DESCRIPTION">
+      <Position>4</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <index id="110" parent="33" name="resume_pk">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="111" parent="33" name="resume_pk">
+      <ObjectId>391672443</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.380</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>resume_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="112" parent="33" name="FK__resume_ta__EMPLO__184C96B4">
+      <ObjectId>407672500</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.380</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.380</ModifiedTimestamp>
+      <ColNames>EMPLOYEE_ID</ColNames>
+      <RefTableName>employee</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="113" parent="34" name="xserver_name">
+      <Position>1</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="114" parent="34" name="xdttm_ins">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="115" parent="34" name="xdttm_last_ins_upd">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="116" parent="34" name="xfallback_dbid">
+      <Position>4</Position>
+      <DataType>smallint|0</DataType>
+    </column>
+    <column id="117" parent="34" name="name">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="118" parent="34" name="dbid">
+      <Position>6</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="119" parent="34" name="status">
+      <Position>7</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="120" parent="34" name="version">
+      <Position>8</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="121" parent="35" name="xserver_name">
+      <Position>1</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="122" parent="35" name="xdttm_ins">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="123" parent="35" name="xdttm_last_ins_upd">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="124" parent="35" name="xfallback_low">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="125" parent="35" name="xfallback_drive">
+      <Position>5</Position>
+      <DataType>char(2)|0</DataType>
+    </column>
+    <column id="126" parent="35" name="low">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="127" parent="35" name="high">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="128" parent="35" name="status">
+      <Position>8</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="129" parent="35" name="name">
+      <Position>9</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="130" parent="35" name="phyname">
+      <Position>10</Position>
+      <DataType>varchar(127)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="131" parent="36" name="xserver_name">
+      <Position>1</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="132" parent="36" name="xdttm_ins">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="133" parent="36" name="xdttm_last_ins_upd">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="134" parent="36" name="xfallback_vstart">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="135" parent="36" name="dbid">
+      <Position>5</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="136" parent="36" name="segmap">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="137" parent="36" name="lstart">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="138" parent="36" name="sizepg">
+      <Position>8</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="139" parent="36" name="vstart">
+      <Position>9</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="140" parent="37" name="lastrun">
+      <Position>1</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="141" parent="37" name="cpu_busy">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="142" parent="37" name="io_busy">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="143" parent="37" name="idle">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="144" parent="37" name="pack_received">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="145" parent="37" name="pack_sent">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="146" parent="37" name="connections">
+      <Position>7</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="147" parent="37" name="pack_errors">
+      <Position>8</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="148" parent="37" name="total_read">
+      <Position>9</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="149" parent="37" name="total_write">
+      <Position>10</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="150" parent="37" name="total_errors">
+      <Position>11</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="151" parent="38" name="ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="152" parent="38" name="DESCRIPTION">
+      <Position>2</Position>
+      <DataType>nvarchar(255)|0</DataType>
+    </column>
+    <column id="153" parent="38" name="PROFESSION_ID">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="154" parent="38" name="COMPANY_ID">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="155" parent="38" name="SALARY">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="156" parent="38" name="DATA_OPENING">
+      <Position>6</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="157" parent="38" name="DATA_CLOSING">
+      <Position>7</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="158" parent="38" name="vacancy_pk">
+      <Position>1</Position>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="159" parent="38" name="vacancy_pk">
+      <ObjectId>183671702</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.373</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.373</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>vacancy_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="160" parent="38" name="FK__vacancy__PROFESS__0BE6BFCF">
+      <ObjectId>199671759</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.373</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.373</ModifiedTimestamp>
+      <ColNames>PROFESSION_ID</ColNames>
+      <RefTableName>profession</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="161" parent="38" name="FK__vacancy__COMPANY__0CDAE408">
+      <ObjectId>215671816</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.373</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.373</ModifiedTimestamp>
+      <ColNames>COMPANY_ID</ColNames>
+      <RefTableName>company</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="162" parent="39" name="VACANCY_ID">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="163" parent="39" name="RESUME_ID">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <index id="164" parent="39" name="vacancy_list_pk">
+      <Position>2</Position>
+      <ColNames>VACANCY_ID
+RESUME_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="165" parent="39" name="vacancy_list_pk">
+      <ObjectId>439672614</ObjectId>
+      <CreatedTimestamp>2017-04-16.19:11:21.383</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.383</ModifiedTimestamp>
+      <ColNames>VACANCY_ID
+RESUME_ID</ColNames>
+      <UnderlyingIndexName>vacancy_list_pk</UnderlyingIndexName>
+    </key>
+    <foreign-key id="166" parent="39" name="FK__vacancy_l__VACAN__1B29035F">
+      <ObjectId>455672671</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.383</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.383</ModifiedTimestamp>
+      <ColNames>VACANCY_ID</ColNames>
+      <RefTableName>vacancy</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="167" parent="39" name="FK__vacancy_l__RESUM__1C1D2798">
+      <ObjectId>471672728</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-04-16.19:11:21.383</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-16.19:11:21.383</ModifiedTimestamp>
+      <ColNames>RESUME_ID</ColNames>
+      <RefTableName>resume_table</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="168" parent="40" name="vacancy_id">
+      <Position>1</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="169" parent="40" name="description">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="170" parent="40" name="date">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="171" parent="40" name="old_salary">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="172" parent="40" name="new_salary">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="173" parent="41" name="name">
+      <Position>1</Position>
+      <DataType>nvarchar(35)|0</DataType>
+    </column>
+    <column id="174" parent="41" name="number">
+      <Position>2</Position>
+      <DataType>int|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="175" parent="41" name="type">
+      <Position>3</Position>
+      <DataType>nchar(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="176" parent="41" name="low">
+      <Position>4</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="177" parent="41" name="high">
+      <Position>5</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="178" parent="41" name="status">
+      <Position>6</Position>
+      <DataType>int|0</DataType>
+    </column>
+  </database-model>
+</dataSource>
