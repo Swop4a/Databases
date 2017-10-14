@@ -27,7 +27,7 @@ CREATE TABLE dimJob (
   Company_Id  BIGINT FOREIGN KEY (Company_Id) REFERENCES dimCompany (Company_Id)
 );
 
-CREATE TABLE dimClient (
+CREATE TABLE dimClients (
   Client_ID   BIGINT NOT NULL PRIMARY KEY,
   First_Name  VARCHAR(40),
   Last_Name   VARCHAR(40),
@@ -70,7 +70,7 @@ CREATE TABLE dimPostAnalyze (
   Post_Id          BIGINT NOT NULL,
   Type_Id          BIGINT FOREIGN KEY (Type_Id) REFERENCES dimType (Type_Id),
   Publication_date BIGINT FOREIGN KEY (Publication_date) REFERENCES dimDate (Date_Id),
-  Client_Id        BIGINT FOREIGN KEY (Client_Id) REFERENCES dimClient (Client_Id),
+  Client_Id        BIGINT FOREIGN KEY (Client_Id) REFERENCES dimClients (Client_Id),
   Category_ID      BIGINT FOREIGN KEY (Category_Id) REFERENCES dimCategory (Category_Id),
   Job_Id           BIGINT FOREIGN KEY (Job_Id) REFERENCES dimJob (Job_Id),
   Post_Desciption  VARCHAR(255),
@@ -100,7 +100,7 @@ CREATE TABLE dimPostAnalyzeRepository (
   Post_Id          BIGINT NOT NULL,
   Type_Id          BIGINT FOREIGN KEY (Type_Id) REFERENCES dimType (Type_Id),
   Publication_date BIGINT FOREIGN KEY (Publication_date) REFERENCES dimDate (Date_Id),
-  Client_Id        BIGINT FOREIGN KEY (Client_Id) REFERENCES dimClient (Client_Id),
+  Client_Id        BIGINT FOREIGN KEY (Client_Id) REFERENCES dimClients (Client_Id),
   Category_ID      BIGINT FOREIGN KEY (Category_Id) REFERENCES dimCategory (Category_Id),
   Job_Id           BIGINT FOREIGN KEY (Job_Id) REFERENCES dimJob (Job_Id),
   Post_Desciption  VARCHAR(255),
@@ -186,7 +186,7 @@ AS
 -- STEP 5
 GO
 
-drop PROCEDURE SlidingWindow
+DROP PROCEDURE SlidingWindow
 
 SELECT
   partition_number,
@@ -218,7 +218,26 @@ SELECT *
 FROM dimPostAnalyzeRepository;
 
 
+INSERT INTO dimRating (Rating_id, Value) VALUES (1, 1);
 
+INSERT INTO dimCategory (Category_Id, Age, Children, Social_Status, Cars) VALUES (1, 30, 0, 'Interprener', 1);
+
+INSERT INTO dimType (Type_Id, Name) VALUES (1, 'Look for');
+INSERT INTO dimType (Type_Id, Name) VALUES (2, 'Offer');
+
+INSERT INTO dimCompany (Company_Id, Name, Stuff, Capital) VALUES (1, 'Apple', 100500, 100000000);
+
+INSERT INTO dimDate (Date_Id, Second, Minute, Hour, Day, Week, Month, Year, Quarter, Day_name, Month_name)
+VALUES (1, 1, 1, 1, 1, 1, 1, 2016, 3, 'Monday', 'January');
+
+INSERT INTO dimJob (Job_Id, Name, Description, Salary, Company_Id)
+VALUES (1, 'Programmer', 'Man who write code', 35000, 1);
+
+INSERT INTO dimClients (Client_ID, First_Name, Last_Name, Buisness_Id, Is_active, Job_Id)
+VALUES (1, 'fName', 'sName', 1, 1, 1);
+
+INSERT INTO dimPostAnalyze (Post_Id, Type_Id, Publication_date, Client_Id, Category_ID, Job_Id, Post_Desciption, Post_status, Rating_Id)
+VALUES (1, 1, 1, 1, 1, 1, 'Some desc', 1, 1);
 
 DROP TABLE dimPostAnalyze;
 DROP TABLE dimPostAnalyzeRepository;
