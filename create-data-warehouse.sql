@@ -160,19 +160,21 @@ AS
 
   ALTER PARTITION FUNCTION PartFuncPostAnalyze_Date() SPLIT RANGE (CAST( CONVERT ( VARCHAR (8), @Date_1, 112) AS BIGINT ));
   ALTER PARTITION FUNCTION PartFuncPostAnalyzeRepository_Date() SPLIT RANGE (CAST( CONVERT ( VARCHAR (8), @Date_2, 112) AS BIGINT ));
+
+  PRINT 'Step 1 complited'
   -- STEP 2
   DECLARE @last_section_number INT;
   SET @last_section_number = (SELECT TOP 1 [partition_number]
                               FROM sys.partitions
                               WHERE OBJECT_ID =
                                     (SELECT OBJECT_ID
-                                     FROM Sys.tables
+                                     FROM sys.tables
                                      WHERE name = 'dimPostAnalyzeRepository')
                               ORDER BY [partition_number] DESC) - 1;
 
   ALTER TABLE dimPostAnalyze
     SWITCH PARTITION 2 TO dimPostAnalyzeRepository PARTITION @last_section_number;
-
+PRINT 'Step 2 complited'
   -- STEP 3
   DECLARE @Date_First BIGINT;
   DECLARE @Date_FirstArch BIGINT;
@@ -185,6 +187,7 @@ AS
                           ORDER BY boundary_id ASC) AS BIGINT);
 
   ALTER PARTITION FUNCTION PartFuncPostAnalyze_Date() MERGE RANGE (@Date_First);
+  PRINT 'Step 3 complited'
   -- STEP 4
   SET @DateForArch = CAST((SELECT TOP 1 [value]
                            FROM sys.partition_range_values
@@ -197,6 +200,7 @@ AS
   ALTER PARTITION FUNCTION PartFuncPostAnalyzeRepository_Date() MERGE RANGE (CAST( CONVERT ( VARCHAR (8), @Date_2, 112) AS BIGINT ));
   ALTER PARTITION SCHEME PartSchPostAnalyzeRepository_Date NEXT USED [PostAnalyzeFG];
   ALTER PARTITION FUNCTION PartFuncPostAnalyzeRepository_Date() SPLIT RANGE (CAST( CONVERT ( VARCHAR (8), @Date_2, 112) AS BIGINT ));
+PRINT 'Step 4 complited'
 -- STEP 5
 GO
 
@@ -256,6 +260,7 @@ VALUES (1, 'fName', 'sName', 1, 1, 1);
 INSERT INTO dimPostAnalyze (Post_Id, Type_Id, Publication_date, Client_Id, Category_Id, Job_Id, Post_Desciption, Post_status, Rating_Id)
 VALUES (1, 1, 20160801, 1, 1, 1, 'Some desc', 1, 1);
 
+UPDATE dimPostAnalyze SET .dimPostAnalyze."Publication_date" = 20170801
 
 UPDATE dimPostAnalyze
 SET Publication_date = 20170801
