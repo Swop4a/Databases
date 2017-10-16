@@ -10,14 +10,18 @@ CREATE TABLE dimDate (
   Quarter    INT    NOT NULL,
   Day_name   VARCHAR(40),
   Month_name VARCHAR(40)
-);
+)
+ON [DateFG]
+;
 
 CREATE TABLE dimCompany (
   Company_Id BIGINT NOT NULL PRIMARY KEY,
   Name       VARCHAR(40),
   Stuff      INT,
   Capital    BIGINT
-);
+)
+ON [CompanyFG]
+;
 
 CREATE TABLE dimJob (
   Job_Id      BIGINT NOT NULL PRIMARY KEY,
@@ -25,7 +29,9 @@ CREATE TABLE dimJob (
   Description VARCHAR(255),
   Salary      INT,
   Company_Id  BIGINT FOREIGN KEY (Company_Id) REFERENCES dimCompany (Company_Id)
-);
+)
+ON [JobFG]
+;
 
 CREATE TABLE dimClients (
   Client_ID   BIGINT NOT NULL PRIMARY KEY,
@@ -34,7 +40,9 @@ CREATE TABLE dimClients (
   Buisness_Id INT,
   Is_active   BIT,
   Job_Id      BIGINT FOREIGN KEY (Job_Id) REFERENCES dimJob (Job_Id)
-);
+)
+ON [ClientsFG]
+;
 
 CREATE TABLE dimCategory (
   Category_Id   BIGINT NOT NULL PRIMARY KEY,
@@ -42,17 +50,23 @@ CREATE TABLE dimCategory (
   Children      INT,
   Social_Status VARCHAR(20),
   Cars          INT
-);
+)
+ON [CategoryFG]
+;
 
 CREATE TABLE dimType (
   Type_Id BIGINT NOT NULL PRIMARY KEY,
   Name    VARCHAR(20)
-);
+)
+ON [TypeFG]
+;
 
 CREATE TABLE dimRating (
   Rating_id BIGINT NOT NULL PRIMARY KEY,
   Value     INT
-);
+)
+ON [RatingFG]
+;
 
 CREATE PARTITION FUNCTION PartFuncPostAnalyze_Date ( BIGINT )
 AS RANGE RIGHT FOR VALUES (20160101, 20170101)
@@ -70,12 +84,12 @@ CREATE TABLE dimPostAnalyze (
   Post_Id          BIGINT NOT NULL,
   Type_Id          BIGINT FOREIGN KEY (Type_Id) REFERENCES dimType (Type_Id),
   Publication_date BIGINT FOREIGN KEY (Publication_date) REFERENCES dimDate (Date_Id),
-  Client_Id        BIGINT FOREIGN KEY (Client_Id) REFERENCES dimClients (Client_Id),
-  Category_ID      BIGINT FOREIGN KEY (Category_Id) REFERENCES dimCategory (Category_Id),
+  Client_Id        BIGINT FOREIGN KEY (Client_Id) REFERENCES dimClients (Client_ID),
+  Category_Id      BIGINT FOREIGN KEY (Category_Id) REFERENCES dimCategory (Category_Id),
   Job_Id           BIGINT FOREIGN KEY (Job_Id) REFERENCES dimJob (Job_Id),
   Post_Desciption  VARCHAR(255),
   Post_status      VARCHAR(20),
-  Rating_Id        BIGINT FOREIGN KEY (Rating_Id) REFERENCES dimRating (Rating_Id)
+  Rating_Id        BIGINT FOREIGN KEY (Rating_Id) REFERENCES dimRating (Rating_id)
     CONSTRAINT [PK_PostAnalyze] PRIMARY KEY CLUSTERED
       (
         Post_Id ASC, Publication_date ASC
@@ -100,12 +114,12 @@ CREATE TABLE dimPostAnalyzeRepository (
   Post_Id          BIGINT NOT NULL,
   Type_Id          BIGINT FOREIGN KEY (Type_Id) REFERENCES dimType (Type_Id),
   Publication_date BIGINT FOREIGN KEY (Publication_date) REFERENCES dimDate (Date_Id),
-  Client_Id        BIGINT FOREIGN KEY (Client_Id) REFERENCES dimClients (Client_Id),
-  Category_ID      BIGINT FOREIGN KEY (Category_Id) REFERENCES dimCategory (Category_Id),
+  Client_Id        BIGINT FOREIGN KEY (Client_Id) REFERENCES dimClients (Client_ID),
+  Category_Id      BIGINT FOREIGN KEY (Category_Id) REFERENCES dimCategory (Category_Id),
   Job_Id           BIGINT FOREIGN KEY (Job_Id) REFERENCES dimJob (Job_Id),
   Post_Desciption  VARCHAR(255),
   Post_status      VARCHAR(20),
-  Rating_Id        BIGINT FOREIGN KEY (Rating_Id) REFERENCES dimRating (Rating_Id)
+  Rating_Id        BIGINT FOREIGN KEY (Rating_Id) REFERENCES dimRating (Rating_id)
     CONSTRAINT [PK_PostAnalyzeRepository] PRIMARY KEY CLUSTERED
       (
         Post_Id ASC, Publication_date ASC
@@ -228,7 +242,10 @@ INSERT INTO dimType (Type_Id, Name) VALUES (2, 'Offer');
 INSERT INTO dimCompany (Company_Id, Name, Stuff, Capital) VALUES (1, 'Apple', 100500, 100000000);
 
 INSERT INTO dimDate (Date_Id, Second, Minute, Hour, Day, Week, Month, Year, Quarter, Day_name, Month_name)
-VALUES (1, 1, 1, 1, 1, 1, 1, 2016, 3, 'Monday', 'January');
+VALUES
+  (20150101, 1, 1, 1, 1, 1, 1, 2015, 3, 'Monday', 'January')
+  , (20160801, 1, 1, 1, 1, 1, 8, 2016, 3, 'Monday', 'August')
+  , (20170801, 1, 1, 1, 1, 1, 8, 2017, 3, 'Monday', 'August');
 
 INSERT INTO dimJob (Job_Id, Name, Description, Salary, Company_Id)
 VALUES (1, 'Programmer', 'Man who write code', 35000, 1);
@@ -236,15 +253,29 @@ VALUES (1, 'Programmer', 'Man who write code', 35000, 1);
 INSERT INTO dimClients (Client_ID, First_Name, Last_Name, Buisness_Id, Is_active, Job_Id)
 VALUES (1, 'fName', 'sName', 1, 1, 1);
 
-INSERT INTO dimPostAnalyze (Post_Id, Type_Id, Publication_date, Client_Id, Category_ID, Job_Id, Post_Desciption, Post_status, Rating_Id)
-VALUES (1, 1, 1, 1, 1, 1, 'Some desc', 1, 1);
+INSERT INTO dimPostAnalyze (Post_Id, Type_Id, Publication_date, Client_Id, Category_Id, Job_Id, Post_Desciption, Post_status, Rating_Id)
+VALUES (1, 1, 20160801, 1, 1, 1, 'Some desc', 1, 1);
+
+
+UPDATE dimPostAnalyze
+SET Publication_date = 20170801
+WHERE Post_Id = 1;
+
+EXEC SlidingWindow;
+
+SELECT *
+FROM dimPostAnalyze;
+SELECT *
+FROM dimPostAnalyzeRepository;
 
 DROP TABLE dimPostAnalyze;
 DROP TABLE dimPostAnalyzeRepository;
-DROP TABLE dimClient;
+DROP TABLE dimClients;
 DROP TABLE dimRating;
 DROP TABLE dimType;
 DROP TABLE dimCategory;
 DROP TABLE dimJob;
 DROP TABLE dimCompany;
 DROP TABLE dimDate;
+
+DROP PROCEDURE SlidingWindow;
