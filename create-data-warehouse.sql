@@ -222,7 +222,7 @@ WHERE OBJECT_ID = (SELECT OBJECT_ID
                    FROM sys.tables
                    WHERE name = 'dimPostAnalyzeRepository')
 
-EXEC SlidingWindow
+EXEC SlidingWindow;
 
 -- TEST
 
@@ -235,7 +235,35 @@ FROM dimPostAnalyze;
 SELECT *
 FROM dimPostAnalyzeRepository;
 
+CREATE NONCLUSTERED INDEX NoCL_Cities
+ON dimClients(Last_Name);
 
+--INDEXES
+CREATE NONCLUSTERED INDEX NoCL_Clients
+ON dimClients(Last_Name);
+
+drop index NoCL_Clients on dimClients;
+
+CREATE NONCLUSTERED INDEX NoCL_Rating
+ON dimRating(Value);
+
+drop index NoCL_Rating on dimRating;
+
+CREATE NONCLUSTERED INDEX NoCL_Date
+ON dimDate(Year)
+INCLUDE (Quarter, Month, Week, Day);
+
+drop index NoCL_Date on dimDate;
+
+CREATE NONCLUSTERED INDEX NoCL_Category
+ON dimCategory(Age);
+
+CREATE NONCLUSTERED COLUMNSTORE INDEX NoCL_Post
+ON dimPostAnalyze(Post_Id, Publication_date, Post_Desciption, Post_Status)
+
+DROP INDEX NoCL_Post ON dimPostAnalyze;
+
+--FILLING
 INSERT INTO dimRating (Rating_id, Value) VALUES (1, 1);
 
 INSERT INTO dimCategory (Category_Id, Age, Children, Social_Status, Cars) VALUES (1, 30, 0, 'Interprener', 1);
